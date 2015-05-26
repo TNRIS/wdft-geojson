@@ -1,0 +1,17 @@
+{
+  "name": "wdft-geojson",
+  "version": "0.0.1",
+  "description": "streaming converter of waterdatafortexas.org current conditions data to geojson",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tnris/wdft-geojson"
+  },
+  "author": "TNRIS",
+  "bugs": {
+    "url": "https://github.com/tnris/wdft-geojson/issues"
+  },
+  "homepage": "https://github.com/tnris/wdft-geojson"
+}
