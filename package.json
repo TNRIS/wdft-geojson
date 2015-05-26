@@ -13,5 +13,13 @@
   "bugs": {
     "url": "https://github.com/tnris/wdft-geojson/issues"
   },
-  "homepage": "https://github.com/tnris/wdft-geojson"
+  "homepage": "https://github.com/tnris/wdft-geojson",
+  "dependencies": {
+    "JSONStream": "^1.0.4",
+    "event-stream": "^3.3.1",
+    "geojson": "^0.2.1",
+    "ramda": "^0.14.0",
+    "request": "^2.55.0",
+    "through": "^2.3.7"
+  }
 }
