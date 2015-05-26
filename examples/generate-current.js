@@ -9,5 +9,5 @@ var WDFTGeoJSON = require('../lib/index.js');
 request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
   .pipe(JSONStream.parse())
   .pipe(WDFTGeoJSON.stream())
-  .pipe(JSONStream.stringify())
+  .pipe(JSONStream.stringify(false))
   .pipe(process.stdout);
