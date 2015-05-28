@@ -26,7 +26,10 @@ request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
       'marker-color': 'marker-color'
     };
 
+
     geojson.features.forEach(function rename(feature) {
+      var urlName = feature.properties['short_name'].toLowerCase().replace(' ', '-');
+
       R.toPairs(renameProperties)
         .forEach(function (pair) {
           var from = pair[0];
@@ -38,7 +41,24 @@ request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
         });
 
       feature.properties = R.pick(R.values(renameProperties), feature.properties);
+
+      var urlBase = 'http://waterdatafortexas.org/reservoirs/individual/' + urlName;
+
+      var reservoirUrls = {
+        'Reservoir Page': urlBase,
+        'Recent Graph': urlBase + '/recent-volume@2x.png',
+        'Historical Graph': urlBase + '/historical-volume@2x.png',
+        'Statistics Graph': urlBase + '/recent-storage-statistics@2x.png'
+      };
+
+      R.toPairs(reservoirUrls)
+        .forEach(function (pair) {
+          var name = pair[0];
+          var url = pair[1];
+          feature.properties[name] = url;
+        });
     });
+
 
     geojson.legend.title = renameProperties['percent_full'];
     this.emit('data', geojson);
