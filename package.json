@@ -1,6 +1,6 @@
 {
   "name": "wdft-geojson",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "streaming converter of waterdatafortexas.org current conditions data to geojson",
   "main": "./lib/index.js",
   "scripts": {
