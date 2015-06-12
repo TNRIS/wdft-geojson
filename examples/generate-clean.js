@@ -26,7 +26,6 @@ request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
       'marker-color': 'marker-color'
     };
 
-
     geojson.features.forEach(function rename(feature) {
       var urlName = feature.properties['short_name'].toLowerCase().replace(' ', '-');
 
@@ -59,8 +58,6 @@ request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
         });
     });
 
-
-    geojson.legend.title = renameProperties['percent_full'];
     this.emit('data', geojson);
   }))
   .pipe(JSONStream.stringify(false))
