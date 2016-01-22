@@ -7,9 +7,16 @@ var JSONStream = require('JSONStream');
 var request = require('request');
 var R = require('ramda');
 var through = require('through');
+var minimist = require('minimist');
+
 var WDFTGeoJSON = require('../lib/index.js');
 
-fs.createReadStream(path.resolve(__dirname, '../data/reservoirs-simplified.geojson'))
+
+var DEFAULT_RESERVOIRS_PATH = path.resolve(__dirname, '../data/reservoirs-simplified.geojson');
+var argv = minimist(process.argv.slice(2));
+var reservoirs_geojson_file = argv._.length ? argv._[0] : DEFAULT_RESERVOIRS_PATH;
+
+fs.createReadStream(reservoirs_geojson_file)
   .pipe(JSONStream.parse())
   .pipe(es.writeArray(function(err, array) {
     var reservoirs = {};

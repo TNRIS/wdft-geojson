@@ -22,5 +22,8 @@
     "ramda": "^0.14.0",
     "request": "^2.55.0",
     "through": "^2.3.7"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0"
   }
 }
