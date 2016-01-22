@@ -46,7 +46,7 @@ fs.createReadStream(reservoirs_geojson_file)
         };
 
         geojson.features.forEach(function rename(feature) {
-          var urlName = feature.properties['short_name'].toLowerCase().replace(' ', '-');
+          var urlName = feature.properties['short_name'].toLowerCase().replace(/ /g, '-');
 
           R.toPairs(renameProperties)
             .forEach(function (pair) {

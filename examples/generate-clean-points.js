@@ -27,7 +27,7 @@ request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
     };
 
     geojson.features.forEach(function rename(feature) {
-      var urlName = feature.properties['short_name'].toLowerCase().replace(' ', '-');
+      var urlName = feature.properties['short_name'].toLowerCase().replace(/ /g, '-');
 
       R.toPairs(renameProperties)
         .forEach(function (pair) {
