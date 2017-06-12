@@ -18,6 +18,7 @@ deployed from the 'aws-tnris-deployments' repo. to deploy manually:
 1. zip up the contents of the repo
 1. upload to aws lambda with a Node.js 6.10 runtime.
 1. points vs polygons will need to be deployed as separate lambda functions. the difference is between the chosen handler:
-    * examples/generate-clean-polygons.handler
-    * examples/generate-clean-points.handler
+    * `examples/generate-clean-polygons.handler`
+    or
+    * `examples/generate-clean-points.handler`
 
