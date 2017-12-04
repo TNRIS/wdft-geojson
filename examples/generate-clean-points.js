@@ -5,7 +5,7 @@ var JSONStream = require('JSONStream');
 var request = require('request');
 var R = require('ramda');
 var through = require('through');
-var WDFTGeoJSON = require('../lib/index.js');
+var WDFTGeoJSON = require('wdft-geojson');
 
 request.get('http://waterdatafortexas.org/reservoirs/recent-conditions.json')
   .pipe(JSONStream.parse())
